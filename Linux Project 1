@@ -16,6 +16,7 @@ Go to the directory where you want to create this project file
          sleep 1s
    done
 3. esc + :wq!
+4. run this command to get the output ./<filename>
 
 ------------------TO GIVE COLORS TO THE WATCH---------------------------------------
 
@@ -35,3 +36,4 @@ Green=$'\e[1;32m'
          sleep 1s
    done
 3. esc + :wq!
+4. run this command to get the output ./<filename>
