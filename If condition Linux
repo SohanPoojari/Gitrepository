@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#syntax for if condition
+
+# if[[condition]]
+# then
+#      statement1
+# else
+#      statement2
+# fi
+
+#simple script for result and grading
+
+read -p "enter the marks of sub1 "  sub1
+
+read -p "enter the marks of sub2 "  sub2
+
+read -p "enter the marks of sub3 "  sub3
+
+echo "****************************"
+
+echo "Total marks is ------ $(($sub1+$sub2+$sub3))"
+
+let sum=$sub1+$sub2+$sub3
+
+echo ************Result***********
+
+let avg=$sum/3
+
+echo Your average is - $avg
+
+echo ************Grades************
+
+
+if [[ avg -ge 90 ]]    # -ge indicates greater or equals, -le indicates less than or equals,
+-gt and -lt means greater than and less than, -e or == means equalsto, -ne or != means not eq
+ualsto
+then
+        echo Congrats you Passed and you have got A+
+elif [[ avg -ge 70 ]]
+then
+        echo Congrats you Passed and you have got A
+elif [[ avg -ge 40 ]]
+then
+        echo Good you Passed and you have got B
+else
+        echo Oops You have failed with C grade
+fi
