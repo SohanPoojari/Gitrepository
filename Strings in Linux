@@ -32,7 +32,7 @@ echo "replaced string is ${replacedstring}"
 slice=${mystring:3:6}
 
 #here in the above command we are creating a variable where we will be assigning the sliced s
-tring, the first number indicates from start what number we have to start slicing second numb
+tring, the first number indicates index  number we have to start slicing second numb
 er indicates the length till where it needs to be sliced
 
 # the above command will print hello
