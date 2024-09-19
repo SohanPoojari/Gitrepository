@@ -1,0 +1,39 @@
+LINUX POJECT 1
+
+Creating a digital watch
+
+Go to the directory where you want to create this project file
+
+------------------TO CREATE A NORMAL WATCH------------------------------------------
+
+1. vi <filename>
+2. #!/bin/bash
+
+   while true        --------- To create infinite loop so that watch can run continously
+   do
+         clear
+         echo $(date +%T)
+         sleep 1s
+   done
+3. esc + :wq!
+4. run this command to get the output ./<filename>
+
+------------------TO GIVE COLORS TO THE WATCH---------------------------------------
+
+First we have to difining the color functions
+
+Red=$'\e[1;31m'              --------------- defining colors
+Blue=$'\e[1;34m'
+Green=$'\e[1;32m'
+
+1. vi <filename>
+2. #!/bin/bash
+
+   while true        --------- To create infinite loop so that watch can run continously
+   do
+         clear
+         echo $Blue $(date +%T)
+         sleep 1s
+   done
+3. esc + :wq!
+4. run this command to get the output ./<filename>
