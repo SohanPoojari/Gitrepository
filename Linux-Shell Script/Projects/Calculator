@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo basic operators only
+
+echo Enter a number
+
+read num1
+
+echo enter second number
+
+read num2
+
+echo enter the operation
+
+read opr
+
+if [ "$opr" == "+" ]; then
+        result=$((num1 + num2))
+elif [ "$opr" == "-" ]; then
+        result=$((num1 - num2))
+elif [ "$opr" == "*" ]; then
+        result=$((num1 * num2))
+elif [ "$opr" == "/" ]; then
+        result=$((num1 / num2))
+fi
+
+echo $result
