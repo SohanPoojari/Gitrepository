@@ -27,3 +27,5 @@ print("My name is", name)
 x = True
 print(type(x)) # outputs: <class 'bool'>
 # boolean type is treated as a special type of variable where the True has value of 1 and False has the value of 0
+string="hello"+"world"   # + operator for strings concatinates two strings
+print(string)
