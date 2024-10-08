@@ -1,0 +1,37 @@
+#!/bin/bash
+
+########################################
+# Author : Sohan
+# Date October-8th-2024
+# Title : Listing aws contents
+#######################################
+
+set -x # debug mode
+set -e # will exit when it faces an error
+set -o pipefail # is used if there is any | pipe operation in script it has to be used when using -e, because -e will not rerutn error when | is used
+
+# To list aws S3 buckets
+
+echo List of S3 buckets
+
+aws s3 ls
+
+# To list ec2 Instances
+
+echo list of EC2 instances
+
+# aws ec2 describe-instances -- this will display ec2 instance information in more complex manner
+aws ec2 describe-instances --query  'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,PublicIpAddress,PrivateIpAddress]'
+# the above line will list the ec2 instances more clearly
+
+# to list lambda functions
+
+echo list of lambda functions
+
+aws lambda list-functions
+
+# to list iam users
+
+echo list of IAM users
+
+aws iam list-users
