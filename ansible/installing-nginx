@@ -1,0 +1,41 @@
+---
+- name: Install and Configure Nginx
+  hosts: azureuser
+  become: true
+  tasks:
+    - name: Install the latest Nginx package
+      yum:
+        name: nginx
+        state: latest
+      register: nginx_install_result
+
+    - name: Start and enable the Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Get Nginx version
+      command: nginx -v
+      register: nginx_version_output
+      changed_when: false
+
+    - name: Print Nginx version
+      debug:
+        var: nginx_version_output.stdout_lines
+
+    - name: Get the status of the Nginx service
+      command: systemctl status nginx.service
+      register: nginx_status_output
+      changed_when: false
+
+    - name: Print Nginx status
+      debug:
+        var: nginx_status_output.stdout_lines
+
+    - name: Copy file to host server
+      copy:
+        src: /home/ansiblescript
+        dest: /home/ec2-user
+        # Add error handling in case the source file does not exist.
+        # Ansible will throw an error if the source file does not exist.
