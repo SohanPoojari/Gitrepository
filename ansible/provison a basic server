@@ -1,0 +1,26 @@
+---
+- name: Provision a Very Basic Server
+  hosts: all
+  become: true
+  vars:
+    admin_user: "myadmin"  # Changed to a simpler default
+    timezone: "Etc/UTC"
+
+  tasks:
+    - name: Install essential packages
+      apt:
+        name:
+          - vim
+          - wget
+        state: present
+        update_cache: true
+
+    - name: Set the timezone
+      community.general.timezone:
+        name: "{{ timezone }}"
+
+    - name: Create an administrative user
+      user:
+        name: "{{ admin_user }}"
+        groups: sudo
+        shell: /bin/bash
