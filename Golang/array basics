@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main() {
+      // initializing the arrays
+	var grades [3]int = [3]int{50, 30, 90}
+	names := [2]string{"Sohan", "Poojari"}
+	age := [...]int{20, 22, 19, 20}
+	fmt.Println("The grades are")
+	fmt.Println(grades)
+      //length of the array
+	fmt.Println(len(grades))
+      // printing the array using index
+	fmt.Println(grades[2])
+	fmt.Println("The names are")
+	fmt.Println(names)
+	fmt.Println(age) 
+      //changing the value of the mentioned index
+	age[3] = 50
+	fmt.Println(age)
+      //array with loops
+	for index, elements := range grades {
+		fmt.Println(index, "=>", elements)
+
+	}
+      // multidimensional array
+	arr := [3][2]int{{2, 4}, {4, 16}, {8, 64}}
+	fmt.Println(arr[1][1])
+}
