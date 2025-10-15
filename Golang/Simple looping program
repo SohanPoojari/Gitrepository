@@ -1,0 +1,38 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var uname string
+	var pass string
+	var i int = 1
+
+	for i <= 3 {
+		fmt.Print("Enter username: ")
+		fmt.Scanln(&uname)
+		fmt.Print("Enter password: ")
+		fmt.Scanln(&pass)
+		uname = strings.TrimSpace(uname)
+		pass = strings.TrimSpace(pass)
+		if uname == "" || pass == "" {
+			fmt.Println("Please enter the given fields")
+		} else if uname == "admin" && pass == "pass123" {
+			fmt.Println("Login successfull")
+		} else if uname == "admin" && pass != "pass123" {
+			fmt.Println("Wrong password")
+		} else if uname != "admin" && pass == "pass123" {
+			fmt.Println("Wong username")
+		} else {
+			fmt.Println("Please provide proper username and password")
+		}
+		i += 1
+		if i > 3 {
+			fmt.Println("You have exceeded the 3 tries")
+		}
+
+	}
+
+}
