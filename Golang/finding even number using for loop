@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+	var start, end int
+
+	fmt.Println("Enter the start number: ")
+	fmt.Scan(&start)
+	fmt.Println("Enter the end number: ")
+	fmt.Scan(&end)
+	found := false
+
+	for i := start; i <= end; i++ {
+		if i%2 == 0 {
+			fmt.Print(" ", i, " ")
+			found = true
+		}
+	}
+	if !found {
+		fmt.Println("No even number found")
+	}
+
+}
