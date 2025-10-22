@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+func main() {
+	var numbers [5]int
+	fmt.Println("Enter 5 numbers")
+
+	for i := 0; i < 5; i++ {
+		fmt.Printf("Numbers : %d", i+1)
+		fmt.Scanln(&numbers[i])
+	}
+
+	sum := 0
+	max := numbers[0]
+	min := numbers[0]
+
+	for _, num := range numbers {
+		sum += num
+		if num > max {
+			max = num
+		}
+		if num < min {
+			max = min
+		}
+	}
+	avg := float64(sum) / float64(len(numbers))
+
+	fmt.Println("Sum is: ", sum)
+	fmt.Println("Average is: ", avg)
+	fmt.Println("Maximum is: ", max)
+	fmt.Print("Minimum is: ", min)
+
+}
